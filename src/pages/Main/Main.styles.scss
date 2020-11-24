@@ -1,0 +1,80 @@
+.filter {
+  position: relative;
+  left: 0;
+  top: 0;
+  max-width: 232px;
+  height: 252px;
+  background-color: #ffffff;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 5px;
+}
+
+.wrapper {
+  width: 100%;
+  padding: 10px 0;
+  word-wrap: break-word;
+}
+
+.title {
+  padding: 10px 20px;
+  font-weight: 600;
+  font-size: inherit;
+  text-transform: uppercase;
+  letter-spacing: .5px;
+}
+
+.label {
+  display: block;
+  position: relative;
+  padding: 10px 20px 10px 50px;
+  font-size: 13px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.label:hover {
+  background-color: #F1FCFF;
+}
+
+.checkbox {
+  display: inline-block;
+  position: absolute;
+  left: 20px;
+  width: 17px;
+  height: 17px;
+  border: 1px solid #9ABBCE;
+  border-radius: 2px;
+}
+
+
+.input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0)
+}
+
+.input:checked ~ .checkbox {
+  border: 1px solid #2196F3;
+}
+
+.input:focus ~ .checkbox {
+  border: 1px solid #2196F3;
+  box-shadow: 0 0 8px 0px #2196f380;
+}
+
+.input:checked ~ .checkbox::before {
+  display: block;
+  position: absolute;
+  content: "";
+  left: 4.5px;
+  top: 0.5px;
+  width: 4px;
+  height: 9px;
+  border: solid #2196F3;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+
+}
