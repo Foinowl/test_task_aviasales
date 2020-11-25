@@ -31,7 +31,7 @@ class Filter extends React.Component {
 					return { ...item }
 				}
 			})
-      this.setState({ value: newChecked })
+			this.setState({ value: newChecked })
     }
   };
 

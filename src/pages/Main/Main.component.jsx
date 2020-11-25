@@ -13,6 +13,7 @@ class MainPage extends React.Component {
 		this.state = {
 			tickets: [],
 			cloneTickets: null,
+			sortTickets: null,
 			selectButton: "low price",
 		}
 	}
@@ -24,8 +25,9 @@ class MainPage extends React.Component {
 			getTicketsPart(id)
 				.then((res) => {
 					const ticket = res.data.tickets
-					this.setState({ tickets: ticket.slice(0, 10) })
-					this.setState({ cloneTickets: ticket.slice(0, 10) })
+					this.setState({ tickets: ticket.slice(0, 5) })
+					this.setState({ cloneTickets: ticket.slice(0, 5) })
+					this.sortByButton()
 				})
 		})
 	}
@@ -36,9 +38,40 @@ class MainPage extends React.Component {
 		}
 	}
 
+	sortByButton = () => {
+		
+		const { selectButton, cloneTickets } = this.state
+		if(!cloneTickets) return
+		if (selectButton === "low price") {
+			const sortArray = cloneTickets.sort((a, b) =>
+				a.price > b.price ? 1 : -1
+			)
+			this.setState({ sortTickets: sortArray })
+		}
+
+		if (selectButton === "fastest") {
+			const sortArray = [...cloneTickets].sort((a, b) => {
+				const firstTicket = a.segments.reduce((acc, i) => i.duration + acc, 0)
+				const secondTicket = b.segments.reduce((acc, i) => i.duration + acc, 0)
+
+				if (firstTicket > secondTicket) {
+					return 1
+				} else if (firstTicket < secondTicket) {
+					return -1
+				} else {
+					return 0
+				}
+			})
+			this.setState({ sortTickets: sortArray })
+		}
+	}
+
 	hideTickets = isCheck => {
-		const {tickets} = this.state
-		isCheck ? this.setState({cloneTickets: tickets}) : this.setState({cloneTickets: []})
+		const { tickets } = this.state
+		isCheck ? this.setState({ cloneTickets: tickets }) : this.setState({ cloneTickets: [] })
+		setTimeout(() => {
+			this.sortByButton()
+		}, 800)
 	}
 
 	sortNonStop = isCheck => {
@@ -48,11 +81,17 @@ class MainPage extends React.Component {
 				return item.segments.every((i) => i.stops.length === 0) // all route without transfers
 			})
 			this.setState({ cloneTickets: [...cloneTickets, ...arraySort] })
+			setTimeout(() => {
+				this.sortByButton()
+			}, 800)
 		} else {
 			const arraySort = cloneTickets.filter((item) => {
 				return item.segments.some((i) => i.stops.length > 0) // one or more of the route with a transfers
 			})
 			this.setState({ cloneTickets: [...cloneTickets, ...arraySort] })
+			setTimeout(() => {
+				this.sortByButton()
+			}, 800)
 		}
 	}
 
@@ -66,6 +105,9 @@ class MainPage extends React.Component {
 				return sort1 && sort2
 			})
 			this.setState({ cloneTickets: [...cloneTickets, ...arraySort] })
+			setTimeout(() => {
+				this.sortByButton()
+			}, 800)
 		} else {
 			const arraySort = cloneTickets.filter((item) => {
 				const sort1 = item.segments.some((i) => i.stops.length > num)
@@ -73,11 +115,17 @@ class MainPage extends React.Component {
 				return sort1 || sort2
 			})
 			this.setState({ cloneTickets: arraySort })
+			setTimeout(() => {
+				this.sortByButton()
+			}, 800)
 		}
 	}
 
 	sortButtons = id => {
 		this.setState({ selectButton: id })
+		setTimeout(() => {
+			this.sortByButton()
+		}, 800)
 	}
 
 	render() {
@@ -90,7 +138,7 @@ class MainPage extends React.Component {
 				/>
 				<div>
 					<SortButtons sorts={this.sortButtons} />
-					<TicketsColumn lists={this.state.cloneTickets} />
+					<TicketsColumn lists={this.state.sortTickets} />
 				</div>
 			</main>
 		)

@@ -8,7 +8,12 @@ const TicketsColumn = ({lists }) => {
 
 
 	const genTicket = () => {
-		return lists.map((val, ind) => <Ticket key={ind} />)
+		return lists.map((val, ind) => (
+			<Ticket
+				key={`${val.price}${val.segments[0].date}${val.carrier}`}
+				ticket={val}
+			/>
+		))
 	}
 
 
