@@ -61,15 +61,15 @@ class MainPage extends React.Component {
 		const {tickets, cloneTickets} = this.state
 		if (isCheck) {
 			const arraySort = tickets.filter(item => {
-				const sort1 = item.segments.some((i) => i.stops.length === numb)
-				const sort2 = item.segments.every((i) => i.stops.length <= numb)
+				const sort1 = item.segments.some((i) => i.stops.length === num)
+				const sort2 = item.segments.every((i) => i.stops.length <= num)
 				return sort1 && sort2
 			})
-			this.setState({ cloneTickets: [...cloneTickets, ...newArr] })
+			this.setState({ cloneTickets: [...cloneTickets, ...arraySort] })
 		} else {
 			const arraySort = cloneTickets.filter((item) => {
-				const sort1 = item.segments.some((i) => i.stops.length > numb)
-				const sort2 = item.segments.every((i) => i.stops.length < numb)
+				const sort1 = item.segments.some((i) => i.stops.length > num)
+				const sort2 = item.segments.every((i) => i.stops.length < num)
 				return sort1 || sort2
 			})
 			this.setState({ cloneTickets: arraySort })
@@ -83,10 +83,14 @@ class MainPage extends React.Component {
 	render() {
 		return (
 			<main className="main-container">
-				<Filter filterTickets={this.hideTickets, this.sortNonStop, this.sortByStops}/>
+				<Filter
+					hideTickets={this.hideTickets}
+					sortNonStop={this.sortNonStop}
+					sortByStops={this.sortByStops}
+				/>
 				<div>
-					<SortButtons sorts={this.sortButtons}/>
-					<TicketsColumn lists={this.state.tickets} />
+					<SortButtons sorts={this.sortButtons} />
+					<TicketsColumn lists={this.state.cloneTickets} />
 				</div>
 			</main>
 		)

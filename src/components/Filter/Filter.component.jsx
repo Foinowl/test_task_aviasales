@@ -5,6 +5,7 @@ import CheckBox from '../../components/CheckBox/CheckBox.component'
 import './Filter.styles.scss'
 
 class Filter extends React.Component {
+
 	state = {
 		value: [
 			{ value: "Все", id: "checkedAll", isChecked: true },
@@ -35,6 +36,7 @@ class Filter extends React.Component {
   };
 
 	changeIsChecked = (id, isChecked) => {
+		const { hideTickets, sortNonStop, sortByStops } = this.props
 		// если выбраны "все" билеты, меняем их isChecked
 		if (id === "checkedAll") {
 			const newChecked = this.state.value.map((item) => ({
@@ -43,15 +45,15 @@ class Filter extends React.Component {
 			}))
 
 			this.setState({ value: newChecked })
-			// hiddenTickets(isChecked)
+			hideTickets(isChecked)
 		} else if (id === "nonStop") {
 			this.checkID(id, isChecked)
-			// sortNonStop(isChecked)
+			sortNonStop(isChecked)
 		}
 		// все остальные варианты пересадок
 		else {
 			this.checkID(id, isChecked)
-			// sortStops(id, isChecked)
+			sortByStops(id, isChecked)
 		}
 	}
 
