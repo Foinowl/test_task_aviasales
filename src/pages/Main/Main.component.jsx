@@ -36,6 +36,46 @@ class MainPage extends React.Component {
 		}
 	}
 
+	hideTickets = isCheck => {
+		const {tickets} = this.state
+		isCheck ? this.setState({cloneTickets: tickets}) : this.setState({cloneTickets: []})
+	}
+
+	sortNonStop = isCheck => {
+		const {tickets, cloneTickets} = this.state
+		if (isCheck) {
+			const arraySort = tickets.filter((item) => {
+				return item.segments.every((i) => i.stops.length === 0) // all route without transfers
+			})
+			this.setState({ cloneTickets: [...cloneTickets, ...arraySort] })
+		} else {
+			const arraySort = cloneTickets.filter((item) => {
+				return item.segments.some((i) => i.stops.length > 0) // one or more of the route with a transfers
+			})
+			this.setState({ cloneTickets: [...cloneTickets, ...arraySort] })
+		}
+	}
+
+
+	sortByStops = (num, isCheck) => {
+		const {tickets, cloneTickets} = this.state
+		if (isCheck) {
+			const arraySort = tickets.filter(item => {
+				const sort1 = item.segments.some((i) => i.stops.length === numb)
+				const sort2 = item.segments.every((i) => i.stops.length <= numb)
+				return sort1 && sort2
+			})
+			this.setState({ cloneTickets: [...cloneTickets, ...newArr] })
+		} else {
+			const arraySort = cloneTickets.filter((item) => {
+				const sort1 = item.segments.some((i) => i.stops.length > numb)
+				const sort2 = item.segments.every((i) => i.stops.length < numb)
+				return sort1 || sort2
+			})
+			this.setState({ cloneTickets: arraySort })
+		}
+	}
+
 	sortButtons = id => {
 		this.setState({ selectButton: id })
 	}
@@ -43,7 +83,7 @@ class MainPage extends React.Component {
 	render() {
 		return (
 			<main className="main-container">
-				<Filter />
+				<Filter filterTickets={this.hideTickets, this.sortNonStop, this.sortByStops}/>
 				<div>
 					<SortButtons sorts={this.sortButtons}/>
 					<TicketsColumn lists={this.state.tickets} />
