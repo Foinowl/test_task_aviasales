@@ -1,23 +1,23 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # dependencies
-/node_modules
-/.pnp
-.pnp.js
+/tickets_avia/node_modules
+/tickets_avia/.pnp
+/tickets_avia/.pnp.js
 
 # testing
-/coverage
+/tickets_avia/coverage
 
 # production
-/build
+/tickets_avia/build
 
 # misc
-.DS_Store
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
+/tickets_avia.DS_Store
+/tickets_avia.env.local
+/tickets_avia.env.development.local
+/tickets_avia.env.test.local
+/tickets_avia.env.production.local
 
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
+/tickets_avianpm-debug.log*
+/tickets_aviayarn-debug.log*
+/tickets_aviayarn-error.log*
