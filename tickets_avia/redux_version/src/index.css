@@ -1,0 +1,41 @@
+@import "normalize.css";
+
+body {
+  margin: 0;
+  font-family: "Open Sans", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #f3f7fa;
+  color: #4a4a4a;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  color: inherit;
+}
+
+:root {
+  --filter-heading-color: #4a4a4a;
+
+  --sorting-tabs-border-color: #dfe5ec;
+  --sorting-tab-color--active: #fff;
+  --sorting-tab-bg: #fff;
+  --sorting-tab-bg--active: #2196f3;
+  --sorting-tab-bg--hover: #e5f9ff;
+
+  --checkbox-border-color: #9abbce;
+  --checkbox-border-color--hover: #2196f3;
+  --checkbox-label-bg--hover: #f1fcff;
+  --checkbox-check-mark: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iOSIgaGVpZ2h0PSI3IiB2aWV3Qm94PSIwIDAgOSA3IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgogICAgPHBhdGggZD0iTTEuNSAzLjVsMiAyIDQtNCIgc3Ryb2tlPSIjMjE5NkYzIiBzdHJva2Utd2lkdGg9IjIiIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+Cjwvc3ZnPgo=) no-repeat;
+
+  --ticket-bg: #fff;
+  --ticket-price-color: #2196f3;
+  --ticket-segment-heading-color: #a0b0b9;
+}

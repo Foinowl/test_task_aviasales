@@ -18,6 +18,28 @@
 /tickets_avia.env.test.local
 /tickets_avia.env.production.local
 
-/tickets_avianpm-debug.log*
-/tickets_aviayarn-debug.log*
-/tickets_aviayarn-error.log*
+/tickets_avi/anpm-debug.log*
+/tickets_avia/yarn-debug.log*
+/tickets_avia/yarn-error.log*
+
+
+/tickets_avia/redux_version/node_modules
+/tickets_avia/redux_version/.pnp
+/tickets_avia/redux_version/.pnp.js
+
+# testing
+/tickets_avia/redux_version/coverage
+
+# production
+/tickets_avia/redux_version/build
+
+# misc
+/tickets_avia/redux_version.DS_Store
+/tickets_avia/redux_version.env.local
+/tickets_avia/redux_version.env.development.local
+/tickets_avia/redux_version.env.test.local
+/tickets_avia/redux_version.env.production.local
+
+/tickets_avia/redux_version/anpm-debug.log*
+/tickets_avia/redux_version/ayarn-debug.log*
+/tickets_avia/redux_version/ayarn-error.log*

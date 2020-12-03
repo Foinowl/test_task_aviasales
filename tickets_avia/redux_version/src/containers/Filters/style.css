@@ -1,0 +1,22 @@
+.filters__wrapper {
+  max-width: 232px;
+  width: 100%;
+}
+
+.filter__item {
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+}
+
+.filter__item .filter__heading {
+  padding: 0 20px;
+  margin: 20px 0 10px 0;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 0.5px;
+  color: var(--filter-heading-color);
+}
