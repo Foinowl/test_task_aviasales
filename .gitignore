@@ -43,3 +43,29 @@
 /tickets_avia/redux_version/anpm-debug.log*
 /tickets_avia/redux_version/ayarn-debug.log*
 /tickets_avia/redux_version/ayarn-error.log*
+
+
+
+# dependencies
+/marketing_avia/backend/node_modules
+/marketing_avia/client/node_modules
+/marketing_avia/client//.pnp
+/marketing_avia/client/.pnp.js
+
+# testing
+/marketing_avia/client//coverage
+
+# production
+/marketing_avia/client//build
+
+# misc
+/marketing_avia/client/.DS_Store
+/marketing_avia/client/.env.local
+/marketing_avia/client/.env.development.local
+/marketing_avia/client/.env.test.local
+/marketing_avia/client/.env.production.local
+
+/marketing_avia/client/npm-debug.log*
+/marketing_avia/client/yarn-debug.log*
+/marketing_avia/client/yarn-error.log*
+

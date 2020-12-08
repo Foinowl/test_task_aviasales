@@ -1,0 +1,26 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "knexfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server": "cd server && nodemon index.js",
+    "migrations": "cd db/migrations && knex migrate:latest"
+  },
+  "dependencies": {
+    "axios": "^0.19.2",
+    "body-parser": "^1.19.0",
+    "cors": "2.8.5",
+    "document-register-element": "1.13.1",
+    "express": "4.17.1",
+    "knex": "^0.21.2",
+    "knex-migrate": "^1.7.4",
+    "pg": "^8.3.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.1"
+  },
+  "author": "",
+  "license": "ISC"
+}

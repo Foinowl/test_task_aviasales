@@ -1,0 +1,11 @@
+{
+  "name": "marketing_avia",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "client": "cd client && npm start",
+    "back": "cd backend && npm run server"
+  },
+  "author": "",
+  "license": "ISC"
+}

@@ -1,0 +1,1 @@
+https://github.com/KosyanMedia/test-tasks/tree/master/gates_team
