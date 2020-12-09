@@ -1,0 +1,18 @@
+.page__content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    max-width: 410px;
+}
+
+.page__title {
+  margin: 0;
+  margin-bottom: 20px;
+  font-family: Shnobel;
+  font-size: 50px;
+  font-weight: normal;
+  color: #fff;
+  text-align: center;
+  line-height: 52px;
+}
