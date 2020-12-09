@@ -1,0 +1,48 @@
+.container__social {
+  position: relative;
+}
+
+.wrapper {
+  width: 100%;
+
+  margin-bottom: 20px;
+  padding-left: 64px;
+  padding-right: 46px;
+}
+
+.container__buttons {
+  display: flex;
+  justify-content: space-between;
+
+  max-width: 300px;
+}
+
+.container__social-label {
+  margin: 0;
+  margin-top: 36px;
+  margin-bottom: 14px;
+
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 25px;
+
+  color: white;
+}
+
+
+.container__social-label::before {
+  content: '1.';
+  position: absolute;
+  left: 0;
+  top: 18px;
+
+  font-family: 'Shnobel';
+  font-size: 44px;
+  line-height: 46px;
+  font-weight: normal;
+  text-align: center;
+
+  color: white;
+}

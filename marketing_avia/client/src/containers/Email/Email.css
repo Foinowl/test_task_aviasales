@@ -1,0 +1,50 @@
+.container__email {
+  position: relative;
+}
+
+.container__form {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+
+  width: 100%;
+
+  padding-left: 64px;
+  padding-right: 46px;
+}
+
+.container__form-label {
+  margin: 0;
+  margin-bottom: 15px;
+
+  line-height: 18px;
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+
+  color: white;
+}
+
+.container__form-label::before {
+  content: '2.';
+
+  position: absolute;
+  left: 0;
+  top: -10px;
+  color: white;
+
+  font-family: 'Shnobel';
+  font-size: 44px;
+  line-height: 46px;
+  font-weight: normal;
+  text-align: center;
+}
+
+.container__form-button {
+  align-self: center;
+
+  width: 230px;
+  margin-top: 40px;
+}

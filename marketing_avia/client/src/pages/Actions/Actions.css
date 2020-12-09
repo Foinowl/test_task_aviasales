@@ -1,4 +1,4 @@
-.page__content{
+.content__form{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -15,4 +15,5 @@
   color: #fff;
   text-align: center;
   line-height: 52px;
+
 }

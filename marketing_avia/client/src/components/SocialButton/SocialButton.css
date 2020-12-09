@@ -1,0 +1,23 @@
+.button-component {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 53px;
+    height: 53px;
+
+    background-color: #3B5998 !important;
+    border: none;
+    border-radius: 50%;
+    outline: none;
+
+
+    transition: transform 0.2s;
+    z-index: 100;
+    
+    font-family: 'Shnobel';
+    font-weight: normal;
+    font-size: 40px;
+    line-height: 42px;
+    text-align: center;
+}
