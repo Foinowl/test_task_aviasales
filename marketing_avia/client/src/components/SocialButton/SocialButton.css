@@ -6,7 +6,7 @@
     width: 53px;
     height: 53px;
 
-    background-color: #3B5998 !important;
+    /* background-color: #3B5998 !important; */
     border: none;
     border-radius: 50%;
     outline: none;
@@ -20,4 +20,92 @@
     font-size: 40px;
     line-height: 42px;
     text-align: center;
+
+    animation: 2s linear 10s pulse infinite;
+}
+
+.btn--vk {
+ background-color: #45668E !important;
+ animation-delay: .06s;
+}
+
+.btn--facebook {
+ background-color: #3B5998 !important;
+ animation-delay: .125s;
+}
+
+.btn--twitter {
+ background-color: #00ACED !important;
+ animation-delay: .187s;
+}
+
+.btn--ok {
+ background-color: #EB722E !important;
+ animation-delay: .25s;
+}
+
+.button-component.button-component--share {
+    position: relative;
+    padding: 0;
+    overflow: visible;
+    border-radius: 50%;
+}
+
+.button-component.button-component--share:after, .button-component.button-component--share:before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+}
+
+.button-component.btn--vk:before {
+  background-image: url(../../assets/icons/vk.svg);
+}
+
+.button-component:hover {
+  animation: none;
+  transform: scale(1.15);
+  transition: transform .2s;
+}
+
+
+.button-component.button-component--share:after {
+  background-image: url(../../assets/icons/heart.svg);
+  opacity: 0;
+}
+
+.button-component.button-component--share:hover:before {
+    opacity: 0
+}
+
+.button-component.button-component--share:hover:after {
+    opacity: 1
+}
+
+.button-component.btn--facebook:before {
+  background-image: url(../../assets/icons/facebook.svg);
+}
+
+.button-component.btn--twitter:before {
+  background-image: url(../../assets/icons/twitter.svg);
+}
+
+.button-component.btn--ok:before {
+  background-image: url(../../assets/icons/ok.svg);
+}
+
+@keyframes pulse {
+  from {
+    transform: scale(1);
+  }
+  75% {
+    transform: scale(1.05);
+  }
+  to {
+    transform: scale(0.95);
+  }
 }
