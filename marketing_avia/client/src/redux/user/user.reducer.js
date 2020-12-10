@@ -2,15 +2,13 @@ import UserActionTypes from "./user.types"
 
 
 const INITIAL_STATE = {
-  user: localStorage.getItem('user'),
+  user: JSON.parse(localStorage.getItem('user')),
 	loading: false,
 	error: null,
 }
 
 const userReducer = (state = INITIAL_STATE, action) => {
 	const { type, paylod } = action
-	console.log("Payloads in reducer", paylod)
-	// const { id, share, email } = payload
 
   switch (type) {
 		case UserActionTypes.CREATE_USER_SUCCESS:

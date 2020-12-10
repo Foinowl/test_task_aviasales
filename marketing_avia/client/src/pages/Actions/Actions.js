@@ -18,6 +18,7 @@ const Actions = () => {
 	}, [dispatch])
 
 	if (!user) return null
+	console.log(user);
 
   return (
 		<div className="content__form">

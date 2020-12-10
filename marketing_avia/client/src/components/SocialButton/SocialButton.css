@@ -98,6 +98,20 @@
   background-image: url(../../assets/icons/ok.svg);
 }
 
+
+.button-component.button-component--active {
+  animation: none;
+  position: relative;
+  display: inline-block;
+  color: #fff;
+  -webkit-transition: color .3s;
+  -o-transition: .3s color;
+  transition: color .3s;
+  opacity: 0.3;
+}
+
+
+
 @keyframes pulse {
   from {
     transform: scale(1);

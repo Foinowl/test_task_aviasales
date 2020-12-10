@@ -18,7 +18,7 @@ module.exports.getUser = (req, res, next) => {
 }
 
 
-module.exports.updateUser = (req, res) => {
+module.exports.updateUser = (req, res, next) => {
   const { id } = req.params
   const { props } = req.body
   

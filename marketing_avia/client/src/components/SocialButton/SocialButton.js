@@ -2,19 +2,6 @@ import React, { useState } from "react"
 
 import "./SocialButton.css"
 
-import heart from "../../assets/icons/heart.svg"
-import _vk from "../../assets/icons/vk.svg"
-import _facebook from "../../assets/icons/facebook.svg"
-import _twitter from "../../assets/icons/twitter.svg"
-import _ok from "../../assets/icons/ok.svg"
-
-const typeButtons = {
-	facebook: _facebook,
-	ok: _ok,
-	twitter: _twitter,
-	vk: _vk,
-}
-
 
 const colorButtons = {
 	facebook: "btn--facebook",
@@ -33,30 +20,31 @@ const linkButtons = {
 }
 
 
-const shareButton = (link) => {
-	const linkBtn = linkButtons[link]
-
-	let shareWindow = window.open(
-		linkBtn,
-		"Птички лети, лети",
-		"width=700,height=500"
-	)
-}
-
 const SocialButton = (props) => {
-	const { socail } = props
-	const srcBtn = typeButtons[socail]
+	const { socail, disabled, onShareWindowClose } = props
+
+
+	const shareButton = (link) => {
+		const linkBtn = linkButtons[link]
+
+		window.open(linkBtn, "Птички лети, лети", "width=700,height=500")
+
+		onShareWindowClose()
+	}
+
 	const colorBtn = colorButtons[socail]
 	let styles = ["button-component button-component--share"]
 	styles = styles.concat(colorBtn)
-
+	if (disabled) {
+		styles = styles.concat("button-component--active")
+	}
 
   return (
 		<button
 			className={styles.join(" ")}
+			disabled={disabled}
 			onClick={() => shareButton(socail)}
-		>
-		</button>
+		></button>
 	)
 }
 
