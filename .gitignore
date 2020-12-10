@@ -47,6 +47,9 @@
 
 
 # dependencies
+
+/marketing_avia/node_modules
+
 /marketing_avia/backend/node_modules
 /marketing_avia/client/node_modules
 /marketing_avia/client//.pnp

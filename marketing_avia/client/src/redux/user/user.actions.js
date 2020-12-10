@@ -1,5 +1,5 @@
 import UserActionTypes from "./user.types"
-
+import { getUserApi, updateUserApi, createUserApi } from "../../API/usersAPI"
 
 const createUserStart = () => ({
 	type: UserActionTypes.CREATE_USER_START,
@@ -51,7 +51,7 @@ export const createUser = () => {
 		dispatch(createUserStart())
 
 		try {
-			const { data } = await userApi.createUser()
+			const { data } = await createUserApi()
 			localStorage.setItem("user", JSON.stringify(data))
 			 dispatch(createUserSuccess(data))
 		} catch (error) {
@@ -66,7 +66,7 @@ export const updateUser = (id, props) => {
 		dispatch(updateUserStart())
 
 		try {
-			const { data } = await userApi.updateUser(id, props)
+			const { data } = await updateUserApi(id, props)
 			localStorage.setItem('user', JSON.stringify(data))
 			dispatch(updateUserSuccess(data))
 		} catch (error) {
@@ -80,11 +80,11 @@ export const getUser = (id) => {
 		dispatch(getUserStart())
 
 		try {
-			const { data } = await userApi.getUser(id)
+			const { data } = await getUserApi(id)
 			localStorage.setItem('user', JSON.stringify(data))
-			dispatch(updateUserSuccess(data))
+			dispatch(getUserSuccess(data))
 		} catch (error) {
-			dispatch(updateUserFail(error))
+			dispatch(getUserFail(error))
 		}
 	}
 }

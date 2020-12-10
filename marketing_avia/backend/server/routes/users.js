@@ -11,4 +11,4 @@ router
 	.get(controllers.getUser)
 	.patch(controllers.updateUser)
 
-export { router }
+module.exports = router
