@@ -21,7 +21,7 @@ const linkButtons = {
 
 
 const SocialButton = (props) => {
-	const { socail, disabled, onShareWindowClose } = props
+	const { socail, disabled, onShareWindowClose, anime } = props
 
 
 	const shareButton = (link) => {
@@ -29,7 +29,9 @@ const SocialButton = (props) => {
 
 		window.open(linkBtn, "Птички лети, лети", "width=700,height=500")
 
-		onShareWindowClose()
+		if (anime) {
+			onShareWindowClose()
+		}
 	}
 
 	const colorBtn = colorButtons[socail]
@@ -37,6 +39,10 @@ const SocialButton = (props) => {
 	styles = styles.concat(colorBtn)
 	if (disabled) {
 		styles = styles.concat("button-component--active")
+	}
+
+	if (anime) {
+		styles = styles.concat("button-component--anime")
 	}
 
   return (

@@ -1,7 +1,16 @@
 import "./Input.css"
 
-const Input = () => {
-  return <input className="form__input"></input>
+const Input = (props) => {
+  const { disabled, change, value } = props
+
+  return (
+		<input
+			className="form__input"
+			value={value}
+			onChange={change}
+			disabled={disabled}
+		></input>
+	)
 }
 
 export default Input;

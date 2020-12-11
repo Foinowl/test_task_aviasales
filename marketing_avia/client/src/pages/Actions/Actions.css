@@ -17,3 +17,11 @@
   line-height: 52px;
 
 }
+
+
+@media (max-width: 625px) { 
+  .page__title{
+    font-size: 27px;
+    line-height: 28px;
+  }
+}

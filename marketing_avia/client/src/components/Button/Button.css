@@ -35,7 +35,7 @@
   color: white;
   background-color: transparent;
 
-  opacity: 0.7;
+  opacity: 0.35;
 
   cursor: default;
   animation: none;
@@ -56,5 +56,19 @@
   }
   to {
     transform: scale(1);
+  }
+}
+
+
+@media (max-width:650px) {
+  .btn {
+    padding: 6px 0 14px;
+
+    font-size: 30px;
+    line-height: 31px;
+  }
+
+  .btn::after {
+    content: '!'
   }
 }

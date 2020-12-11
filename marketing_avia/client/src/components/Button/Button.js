@@ -1,7 +1,12 @@
 import "./Button.css"
 
 const Button = (props) => {
-  return <button className="btn">{props.children}</button>
+  const { disabled, children } = props
+  return (
+		<button className="btn" disabled={disabled}>
+			{children}
+		</button>
+	)
 }
 
 export default Button

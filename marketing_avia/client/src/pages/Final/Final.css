@@ -1,0 +1,116 @@
+
+.final__page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    height: 100%;
+    width: 100%;
+
+    background-image: url('../../assets/images/man.svg');
+    background-repeat: no-repeat;
+    background-size: 100% 97%;
+    background-position: 50% 0;
+}
+
+.final__page::after {
+  content: '';
+  position: absolute;
+  display: block;
+
+  z-index: -1;
+
+  bottom: 0;
+
+  width: 100%;
+  height: 15%;
+
+  background-color: #be5e7c;
+}
+
+.final__title {
+  margin: 0;
+
+  font-family: 'Shnobel';
+  font-style: normal;
+  font-weight: normal;
+  text-align: center;
+
+  font-size: 50px;
+  line-height: 52px;
+  color:white;
+}
+
+.final__span {
+  position: relative;
+  color: #7F4156;
+}
+
+.final__span::after {
+  content: '';
+  position: absolute;
+  display: block;
+
+  top: 45%;
+  left: -15%;
+
+  width: 130%;
+  height: 4px;
+
+  background-color:  #7F4156;
+}
+
+.final__span--big {
+  font-size: 100px;
+  line-height: 104px;
+}
+
+@media (max-width: 625px) { 
+  .final__span--big{
+    font-size: 50px;
+    line-height: 52px;
+  }
+
+  .final__title {
+    margin-top: -53.12vw;
+    font-size: 30px;
+    line-height: 31px;
+  }
+
+  .final__page {
+    background-size: 220% 65%;
+  }
+
+  .final__page::after {
+    height: 84.38vw;
+    left:0;
+    right: 0;
+}
+
+  .final_btn {
+    margin-top: 15.63vw;
+    width: 100%;
+    max-width: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    position: absolute;
+    bottom: 22%;
+    left: 0;
+    right: 0;
+  } 
+}
+
+
+.final_btn {
+  margin-top: 4vw;
+  display: flex;
+  justify-content: space-between;
+}
+
+@media (min-width: 625px) {
+  .final_btn {
+    width: 100%;
+    max-width: 275px;
+  }
+} 

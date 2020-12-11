@@ -8,7 +8,7 @@ const Wrapper = (props) => {
   return (
 		<div className="container">
 			<div className="logo">
-				<img src={logo} alt="Logo" />
+				{/* <img src={logo} alt="Logo" /> */}
 			</div>
       <Clouds />
       

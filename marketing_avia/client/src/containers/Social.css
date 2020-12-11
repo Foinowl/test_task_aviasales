@@ -51,6 +51,10 @@
   color: white;
 }
 
+.container__social--label::before {
+  display: none !important;
+}
+
 .container__check {
   position: absolute;
   left: 32px;
@@ -64,3 +68,32 @@
   background-repeat: no-repeat;
   background-position: center;
 }
+
+@media (max-width: 625px) { 
+  .wrapper{
+    padding: 0 40px;
+  }
+  
+  .container__social-label {
+    text-align: center;
+  }
+
+  .container__social-label::before {
+    content: '1.';
+    position: static;
+
+    margin-right: 5px;
+
+    font: inherit;
+  }
+
+  .container__buttons {
+    width: 150px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+
+   
