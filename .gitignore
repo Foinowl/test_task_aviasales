@@ -72,3 +72,30 @@
 /marketing_avia/client/yarn-debug.log*
 /marketing_avia/client/yarn-error.log*
 
+
+
+
+/flask_react/node_modules
+
+
+/flask_react/frontend/node_modules
+/flask_react/frontend/.pnp
+/flask_react/frontend/.pnp.js
+
+# testing
+/flask_react/frontend/coverage
+
+# production
+/flask_react/frontend/build
+
+# misc
+/flask_react/frontend/.DS_Store
+/flask_react/frontend/.env.local
+/flask_react/frontend/.env.development.local
+/flask_react/frontend/.env.test.local
+/flask_react/frontend/.env.production.local
+
+/flask_react/frontend/npm-debug.log*
+/flask_react/frontend/yarn-debug.log*
+/flask_react/frontend/yarn-error.log*
+
