@@ -18,3 +18,8 @@ export const failureFetchDashboard = (error) => ({
 	type: dashboardTypes.FETCH_DASHBOARD_FAILURE,
 	payload: error
 })
+
+export const pushUrlParams = (param) => ({
+	type: dashboardTypes.PUSH_URL,
+	payload: param
+})

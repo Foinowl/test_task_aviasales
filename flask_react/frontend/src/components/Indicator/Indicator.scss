@@ -1,0 +1,40 @@
+.indicator {
+  display: inline-block;
+
+  .led {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+    margin-right: 8px;
+    margin-bottom: 23px;
+  }
+
+  .good {
+    background: #8BC34A;
+  }
+
+  .bad {
+    background: #FF6A67;
+  }
+
+  .label-wrapper {
+    display: inline-block;
+  }
+
+  .label {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 28px;
+    color: #4A4A4A;
+    margin: 0;
+  }
+
+  .sublabel {
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 16px;
+    color: #A0B0B9;
+    margin: 0;
+  }
+}

@@ -1,9 +1,11 @@
 import dashboardTypes from "./dashboard.types"
 
+
 const INITIAL_STATE = {
 	data: null,
 	isFetching: false,
 	errorMessage: undefined,
+	param: 'today'
 }
 
 
@@ -26,6 +28,12 @@ const dashboardReducer = (state = INITIAL_STATE, action) => {
 				isFetching: false,
 				errorMessage: action.payload,
 			}
+		case dashboardTypes.PUSH_URL: {
+			return {
+				...state,
+				param: action.payload
+			}
+		}
 		default:
 			return state
 	}

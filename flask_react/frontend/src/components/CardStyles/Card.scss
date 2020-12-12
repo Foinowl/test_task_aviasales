@@ -1,0 +1,89 @@
+.card {
+
+  button {
+    color: #2196F3;
+    background: none!important;
+    border: none;
+    padding: 0!important;
+    cursor: pointer;
+    font-size: 12px;
+    line-height: 17px;
+  }
+
+  > * {
+    display: inline-block;
+    vertical-align: top;
+  }
+
+  .left-column {
+    width: 217px;
+  }
+
+  .card-line {
+    margin: 0 0 5px;
+    color: #4A4A4A;
+
+    .label {
+      margin-right: 10px;
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 28px;
+    }
+
+    .label.bad {
+      color: #FF6A67;
+    }
+
+    .number {
+      vertical-align: middle;
+      margin-right: 10px;
+      font-weight: normal;
+      font-size: 20px;
+      line-height: 28px;
+    }
+
+    .text {
+      vertical-align: middle;
+      font-weight: normal;
+      font-size: 12px;
+      line-height: 16px;
+    }
+
+    .led {
+      display: inline-block;
+      vertical-align: middle;
+      width: 44px;
+      height: 18px;
+      font-weight: 600;
+      font-size: 12px;
+      text-align: center;
+      color: #FFFFFF;
+      background: #8BC34A;
+      border-radius: 10px;
+    }
+
+    .led.bad {
+      background: #FF6A67;
+    }
+
+    .led.none {
+      display: none;
+    }
+
+    .info {
+      font-weight: normal;
+      font-size: 12px;
+      line-height: 16px;
+    }
+
+    .help {
+      font-weight: normal;
+      font-size: 12px;
+      line-height: 17px;
+    }
+  }
+
+  .light {
+    color: #A0B0B9;
+  }
+}

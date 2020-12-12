@@ -1,0 +1,40 @@
+.tabs {
+  .tab-button {
+    appearance: none;
+    height: 32px;
+    min-width: 92px;
+    padding-left: 16px;
+    padding-right: 16px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 20px;
+    background: #FFFFFF;
+    border: 1px solid #D9D9D9;
+    color: #4A4A4A;
+  }
+
+  .tab-button:first-child {
+    border-radius: 6px 0px 0px 6px;
+  }
+
+  .tab-button:last-child {
+    border-radius: 0 6px 6px 0;
+  }
+
+  .tab-button[isactive='true'] {
+    border: 1px solid #2196F3;
+    background: #2196F3;
+    color: #FFFFFF;
+  }
+
+  .tab-button:not([isactive='true']):hover {
+    border: 1px solid #2196F3;
+    background: #F1FCFF;
+    color: #2196F3;
+  }
+
+  .tab-button:focus {
+    outline: none;
+  }
+}

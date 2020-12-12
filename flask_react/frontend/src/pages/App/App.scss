@@ -1,0 +1,12 @@
+@font-face {
+  font-family: 'Open Sans';
+  src: local('MyFont'), url(../../assets/fonts/opensans.woff) format('woff');
+}
+
+.App {
+  background: #E5E5E5;
+  font-family: Open Sans;
+  font-style: normal;
+  min-height: 100vh;
+  display: flex;
+}

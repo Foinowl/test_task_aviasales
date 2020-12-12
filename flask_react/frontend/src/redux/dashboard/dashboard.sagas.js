@@ -15,7 +15,7 @@ export function* fetchCollectionsAsync() {
     const data = yield call(() => { 
       return getData()
 		});
-		console.log(data.data);
+		console.log("Fetch type data in sagas", data.data)
 		yield put(succesFetchDashboard(data.data))
 	} catch (error) {
 		yield put(failureFetchDashboard(error.message))

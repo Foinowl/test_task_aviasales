@@ -1,0 +1,43 @@
+.value-bar {
+  .bar {
+    height: 8px;
+    display: inline-block;
+    box-sizing: border-box;
+    float: left;
+  }
+
+  .bar-wrapper {
+    width:100%;
+    box-sizing: border-box;
+  }
+
+  .bar-wrapper > :first-child {
+    border-radius: 2px 0 0 2px;
+  }
+
+  .bar-wrapper > :last-child {
+    border-radius: 0 2px 2px 0;
+  }
+
+  .bar-wrapper > :not(:first-child) {
+    border-left: 1px solid white;
+  }
+
+  .label {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 16px;
+    color: #4A4A4A;
+    display: inline-flex;
+    min-width: 136px;
+    margin-top: 20px;
+  }
+
+  .square {
+    width: 10px;
+    height: 10px;
+    border-radius: 2px;
+    margin: auto 5px auto 0;
+  }
+}

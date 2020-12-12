@@ -18,38 +18,45 @@ def get_stats(raw_stats):
             top_statistics={x: dict(
                 name=x.capitalize(),
                 average=round(data.get(f'{x}_last_3days', 0) / 3, 2),
-                value=round(data.get(f'{x}_{keyword}', 0), 2) if data.get(f'{x}_{keyword}') else 0
-                                   ) for x in ['timeout', 'errors', 'zeroes']},
+                value=round(data.get(f'{x}_{keyword}', 0), 2) if data.get(
+                    f'{x}_{keyword}') else 0
+            ) for x in ['timeout', 'errors', 'zeroes']},
             top_errors=get_errors(keyword, raw_stats))
         content = dict(
             searches=dict(
                 # mobile traffic
-                param1=round(data.get("mobile_pessimizer", 0), 2) if data.get("mobile_pessimizer") else 0,
+                param1=round(data.get("mobile_pessimizer", 0),
+                             2) if data.get("mobile_pessimizer") else 0,
                 # web traffic
-                param2=round(data.get("web_pessimizer", 0), 2) if data.get("mobile_pessimizer") else 0,
+                param2=round(data.get("web_pessimizer", 0), 2) if data.get(
+                    "mobile_pessimizer") else 0,
             ),
             clicks=dict(
                 # ctr
-                param1=round(data.get(f"ctr_{keyword}", 0), 2) if data.get(f"ctr_{keyword}") else 0,
+                param1=round(data.get(f"ctr_{keyword}", 0), 2) if data.get(
+                    f"ctr_{keyword}") else 0,
                 param2=None
             ),
             bookings=dict(
                 # str
-                param1=round(data.get(f"str_{keyword}", 0), 2) if data.get(f"str_{keyword}") else 0,
+                param1=round(data.get(f"str_{keyword}", 0), 2) if data.get(
+                    f"str_{keyword}") else 0,
                 # avg_check
-                param2=round(data.get(f"avg_price_{keyword}", 0), 2) if data.get(f"avg_price_{keyword}") else 0
+                param2=round(data.get(f"avg_price_{keyword}", 0), 2) if data.get(
+                    f"avg_price_{keyword}") else 0
             )
         )
         for key in ['searches', 'clicks', 'bookings']:
-            content[key]['current'] = round(data.get(f'{key}_current_{keyword}', 0), 2)
-            content[key]['previous'] = round(data.get(f'{key}_previous_{keyword}', 0), 2)
+            content[key]['current'] = round(
+                data.get(f'{key}_current_{keyword}', 0), 2)
+            content[key]['previous'] = round(
+                data.get(f'{key}_previous_{keyword}', 0), 2)
             # добавить процент изменений по Searches, Clicks, Bookings
             diff = round((content[key]['current'] - content[key]['previous']) / content[key]['previous'], 2) \
                 if content[key]['previous'] != 0 else 0
             content[key]['diff'] = f'+{diff}' if diff > 0 else diff
         tmp['content'] = content
         res[keyword] = tmp
-
 
     print(res)
     return res
